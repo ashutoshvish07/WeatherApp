@@ -1,31 +1,32 @@
 import React from "react";
 
-const TopButtons = () => {
+const TopButtons = ({setquery}) => {
   const cites = [
     {
         id:1,
-        title:"London"
+        title:"Lucknow"
     },
     {
         id:2,
-        title:"Sydney"
+        title:"Azamgarh"
     },
     {
         id:3,
-        title:"Tokyo"
+        title:"Jaunpur"
     },
     {
         id:4,
-        title:"Toronto"
+        title:"Mau"
     },
     {
         id:5,
-        title:"Paris"
+        title:"Gorakhpur"
     },
+   
   ];
   return <div className="flex items-center justify-around my-6">
     {cites.map(({title ,id})=>(
-        <button key={id} className="text-white text-lg font-medium ">{title}</button>
+        <button key={id} onClick={()=>setquery({q:title})} className="text-white text-lg font-medium ">{title}</button>
     ))}
 
   </div>;
